@@ -122,15 +122,24 @@ header h1 {
 .product-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* center items */
   gap: 16px;
 }
 
+
 @media (max-width: 768px) {
   .product-card {
-    flex: 1 1 100%; 
-     width: 100%;
-  max-width: 300px;  /* One item per row on mobile */
+  flex: 1 1 calc(50% - 16px);  /* 2 items per row on mobile */
+  max-width: 200px;
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    flex: 1 1 100%;  /* 1 item per row on very small screens */
+    max-width: 100%;
   }
+}
+
 }
 
 .product-card:hover {

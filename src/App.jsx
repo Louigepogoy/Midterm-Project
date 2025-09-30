@@ -82,7 +82,7 @@ export default function Home() {
       { id: 8, name: "Under Armor shoes", price: 1600, category: "Shoes", image: "5.jpg" },
       { id: 9, name: "One Piece tshirt", price: 600, category: "Clothing", image: "one piece 2.webp" },
       { id: 10, name: "One piece tshirt", price: 450, category: "Clothing", image: "one piece 1.webp" },
-      { id: 11, name: "Jeans Men", price: 550, category: "Clothing", image: "public/jeans 1.jpg" },
+      { id: 11, name: "Jeans Men", price: 550, category: "Clothing", image: "jeans 1.jpg" },
       { id: 12, name: "Blue Denim Jeans", price: 450, category: "Clothing", image: "blue-denim-jeans-dg-jeans-58954859-2_2.webp" },
       { id: 13, name: "Jeans Gr140", price: 400, category: "Clothing", image: "jeans-gr140.jpg" },
       { id: 14, name: "Public Jeans", price: 600, category: "Clothing", image: "R.jpg" },
