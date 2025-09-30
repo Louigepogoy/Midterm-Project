@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Header from "./Components/Header";
+import Header from "./components/Header";
 import SearchAndFilters from "./components/SearchAndFilters";
 import ProductGrid from "./components/ProductGrid";
 import ProductModal from "./components/ProductModal";
@@ -67,7 +67,12 @@ export default function Home() {
 
   useEffect(() => {
     const sampleProducts = [
-      { id: 1, name: "Nike Shoes", price: 2000, category: "Shoes", image: "h.webp" },
+      { id: 1, 
+        name: "Nike Shoes", 
+        price: 2000, 
+        category: "Shoes", 
+        image: "h.webp"
+       },
       { id: 2, name: "Adidas T-shirt", price: 500, category: "Clothing", image: "ss.jpg" },
       { id: 3, name: "Puma Hat", price: 300, category: "Accessories", image: "No-1-Baseball-Cap-by-PUMA.39302_1rf192.jpg" },
       { id: 4, name: "Levi's Jeans", price: 400, category: "Clothing", image: "1.jpg" },
