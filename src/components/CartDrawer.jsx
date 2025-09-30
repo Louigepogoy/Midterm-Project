@@ -1,4 +1,3 @@
-
 const currency = (n) => `₱${n.toFixed(2)}`;
 
 export default function CartDrawer({ open, onClose, cartItems, onRemove, onCheckout }) {
@@ -6,14 +5,29 @@ export default function CartDrawer({ open, onClose, cartItems, onRemove, onCheck
 
   const total = cartItems.reduce((s, i) => s + i.price * i.qty, 0);
 
+  const handleCheckoutClick = () => {
+    if (cartItems.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    if (window.confirm(`Proceed to checkout with total ${currency(total)}?`)) {
+      onCheckout(); // ✅ Trigger the checkout function from parent
+      // Optionally clear cart here if parent handles it
+      // cartItems = [];
+      alert("✅ Order placed successfully!");
+      onClose();
+    }
+  };
+
   return (
     <div
       className="fixed inset-0 bg-black/40 flex justify-end z-50"
-      onClick={onClose} // Close when clicking background
+      onClick={onClose}
     >
       <div
         className="bg-white w-96 h-full p-6 shadow-lg flex flex-col transform transition-transform duration-300 translate-x-0"
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex justify-between items-center mb-4 border-b pb-2">
@@ -37,7 +51,6 @@ export default function CartDrawer({ open, onClose, cartItems, onRemove, onCheck
               key={item.id}
               className="flex items-center justify-between border-b pb-2 hover:bg-gray-50 p-2 rounded"
             >
-              {/* Image + Info */}
               <div className="flex items-center gap-3">
                 <img
                   src={item.image}
@@ -52,7 +65,6 @@ export default function CartDrawer({ open, onClose, cartItems, onRemove, onCheck
                 </div>
               </div>
 
-              {/* Remove Button */}
               <button
                 onClick={() => onRemove(item.id)}
                 className="text-red-500 text-sm hover:underline"
@@ -69,7 +81,7 @@ export default function CartDrawer({ open, onClose, cartItems, onRemove, onCheck
             <span>Total:</span> <span>{currency(total)}</span>
           </p>
           <button
-            onClick={onCheckout}
+            onClick={handleCheckoutClick}
             className="w-full mt-3 p-2 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-lg font-semibold shadow hover:scale-105 transition"
           >
             ✅ Checkout

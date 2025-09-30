@@ -1,9 +1,12 @@
-
-
-
-
 export default function ProductModal({ product, onClose, onAddToCart }) {
   if (!product) return null;
+
+  // This function will run when user clicks "Add to Cart"
+  const handleAddToCart = () => {
+    onAddToCart(product);           // ✅ Send product to cart
+    alert("✅ Added to cart!");     // ✅ Show success message (you can replace this with toast later)
+    onClose();                      // ✅ Close modal after adding (optional)
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -35,11 +38,12 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
 
           {/* Action Buttons */}
           <div className="modal-buttons">
-            <button className="add-btn" onClick={() => onAddToCart(product)}>
+            <button className="add-btn" onClick={handleAddToCart}>
               Add to Cart 🛒
             </button>
             <button className="close-btn2" onClick={onClose}>
               Close
+              
             </button>
           </div>
         </div>

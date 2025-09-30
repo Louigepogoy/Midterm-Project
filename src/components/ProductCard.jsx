@@ -1,29 +1,25 @@
-import "./ProductCard.css";
-export default function ProductCard({ product, onProductClick, onAddToCart }) {
+export default function ProductCard({ product, onProductClick, onAddToCart, onBuyNow }) {
   return (
     <div className="product-card">
-      {/* Show the product image */}
-      <img 
-        src={product.image} 
-        alt={product.name} 
-        className="product-image"
+      <img
+        src={product.image}
+        alt={product.name}
+        onClick={() => onProductClick(product)}
       />
-
       <h3>{product.name}</h3>
-      <p className="price">₱{product.price}.00</p>
-      <p className="category">{product.category}</p>
+      <p>₱{product.price}.00</p>
 
-      <div className="buttons">
-        <button className="view-btn" onClick={() => onProductClick(product)}>
-          View
-        </button>
-        <button className="add-btn" onClick={() => onAddToCart(product)}>
-          Add
-        </button>
-        <button className="buy-btn" onClick={() => BuyToCart(product)}>
-          buy
-        </button>
-      </div>
+      {/* ✅ Single Buy Now Button */}
+      <button 
+        className="buy-now-btn" 
+        onClick={() => onBuyNow(product)}  // Make sure it passes the product!
+        style={{ background: "#ff6600", color: "#fff", marginTop: "5px" }}
+      >
+        Buy Now
+      </button>
+
+      <button onClick={() => onProductClick(product)}>View</button>
+      <button onClick={() => onAddToCart(product)}>Add to Cart</button>
     </div>
   );
 }

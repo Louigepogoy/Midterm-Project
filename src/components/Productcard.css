@@ -7,7 +7,7 @@
 }
 
 .Product-card {
-  background: #fff;
+  background: #eb3333;
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -43,7 +43,7 @@
 
 .category {
   font-size: 0.9rem;
-  color: #666;
+  color: #db2323;
   margin-bottom: 12px;
 }
 
@@ -66,7 +66,7 @@
 
 .view-btn {
   background: #3498db;
-  color: white;
+  color: rgb(190, 25, 25);
 }
 
 .view-btn:hover {
