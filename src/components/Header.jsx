@@ -2,10 +2,10 @@ export default function Header({ cartCount, onOpenCart, onSearch }) {
   return (
     <header className="w-full bg-black text-white p-6 text-center custom-header">
 
-      {/* ✅ Centered Website Title */}
-      <h1 className="text-4xl font-bold mb-6 flex items-center justify-center gap-2 custom-title">
-        <span>🛒</span> LJR Online Store
-      </h1>
+      {/* ✅ Centered Logo Only */}
+      <div className="flex justify-center mb-4">
+        <img src="/public/logo.png" alt="LJR Shop Logo" className="h-16 w-auto" />
+      </div>
 
       {/* 🔍 Search & Cart Row */}
       <div className="flex justify-center items-center gap-6 header-row">
