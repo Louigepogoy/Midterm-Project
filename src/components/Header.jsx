@@ -4,7 +4,7 @@ export default function Header({ cartCount, onOpenCart, onSearch }) {
 
       {/* ✅ Centered Logo Only */}
       <div className="flex justify-center mb-4">
-        <img src="public/logo.png" alt="LJR Shop Logo" className="h-16 w-auto" />
+        <img src="logo.png" alt="LJR Shop Logo" className="h-16 w-auto" />
       </div>
 
       {/* 🔍 Search & Cart Row */}
